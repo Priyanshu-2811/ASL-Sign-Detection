@@ -29,8 +29,8 @@ A real-time hand gesture recognition system that detects and classifies hand ges
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd "HS Detection"
+git clone https://github.com/Priyanshu-2811/ASL-Sign-Detection.git
+cd "ASL Sign Detection"
 ```
 
 ### 2. Create Virtual Environment
