@@ -5,7 +5,7 @@ A real-time hand gesture recognition system that detects and classifies hand ges
 ## 🎯 Features
 
 - **Real-time Detection**: Live hand gesture recognition through webcam
-- **Gesture Recognition**: Supports A (👍) and B (👎) gestures
+- **Gesture Recognition**: Supports A and B gestures
 - **Visual Feedback**: Live camera feed with hand landmarks and prediction results
 - **High Accuracy**: Uses TensorFlow model trained with Teachable Machine
 - **Easy Data Collection**: Built-in tool for collecting custom training data
@@ -79,8 +79,8 @@ python test.py
 **Controls:**
 
 - Show your hand to the camera and make gestures
-- **A**: Thumbs up gesture 👍
-- **B**: Thumbs down gesture 👎
+- **A**: ASL Gesture
+- **B**: ASL Gesture
 - Press **'q'** to quit the application
 
 ### Collecting Training Data (Optional)
