@@ -221,6 +221,7 @@ If you encounter any issues or have questions:
 1. Check the troubleshooting section above
 2. Create an issue in the repository
 3. Ensure you have the correct Python version and dependencies
+
 ---
 
 **Made with ❤️ for accessible communication technology**

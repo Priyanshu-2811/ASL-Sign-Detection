@@ -22,7 +22,7 @@ def get_hand_bbox(landmarks, w, h):
 offset = 20  # Offset for cropping
 imgSize = 300  # Size to resize cropped image
 
-folderPath = "Data/NO"  # Folder to collect data for training
+folderPath = "Data/A"  # Folder to collect data for training
 counter = 0
 
 while True:

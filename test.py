@@ -85,22 +85,30 @@ while True:
                 confidence = np.max(prediction)
 
                 # Display prediction with confidence
-                if confidence > 0.7:  # Only show confident predictions
+                if confidence > 0.8:  # Increase threshold for more strict detection
                     if labels[index] == "A":
-                        box_color = (0, 255, 0)  # Green for YES
+                        box_color = (0, 255, 0)  # Green for A
+                        display_text = "A"
                     elif labels[index] == "B":
-                        box_color = (0, 0, 255)  # Red for NO
+                        box_color = (0, 0, 255)  # Red for B
+                        display_text = "B"
                     else:
-                        box_color = (128, 128, 128)  # Gray for unknown (shouldn't happen)
-                    
-                    # Display prediction with appropriate color
-                    cv2.rectangle(imgOutput, (x1, y1-50), (x1+120, y1), box_color, -1) 
-                    cv2.putText(imgOutput, labels[index], (x1+5, y1-30), 
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)  
-                    cv2.putText(imgOutput, f'{confidence:.2f}', (x1+5, y1-10), 
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1) 
-                    
-                    print(f"Prediction: {labels[index]} ({confidence:.2f})")
+                        box_color = (128, 128, 128)  # Gray for unknown
+                        display_text = "Unknown"
+                else:
+                    # Low confidence = unrecognized
+                    box_color = (128, 128, 128)  # Gray
+                    display_text = "Unrecognized"
+                    confidence = 0.0  # Reset confidence for display
+                
+                # Display prediction with appropriate color
+                cv2.rectangle(imgOutput, (x1, y1-50), (x1+150, y1), box_color, -1) 
+                cv2.putText(imgOutput, display_text, (x1+5, y1-30), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)  
+                cv2.putText(imgOutput, f'{confidence:.2f}', (x1+5, y1-10), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1) 
+                
+                print(f"Prediction: {display_text} ({confidence:.2f})")
 
                 cv2.imshow("Cropped Image", imgCrop)
                 cv2.imshow("White Image", imgWhite)
