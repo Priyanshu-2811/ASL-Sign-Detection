@@ -85,7 +85,7 @@ while True:
                 confidence = np.max(prediction)
 
                 # Display prediction with confidence
-                if confidence > 0.8:  # Increase threshold for more strict detection
+                if confidence > 0.8: 
                     if labels[index] == "A":
                         box_color = (0, 255, 0)  # Green for A
                         display_text = "A"
